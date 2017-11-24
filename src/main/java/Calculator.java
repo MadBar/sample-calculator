@@ -20,6 +20,8 @@ public class Calculator {
 	 * @return: the result of the addition.
 	 * */
 	public double add(double firstNumber, double secondNumber){
+		
+		
 		return firstNumber+secondNumber;
 	}
 	
