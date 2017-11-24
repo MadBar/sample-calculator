@@ -287,9 +287,9 @@ public class CalculatorTest {
 
 		}
 	}
-	
-	//---------------
-	
+
+	// ---------------
+
 	@Test
 	public void testSubtractSmallSizedNegativeNumbers() {
 		double firstNumber = 0;
@@ -329,10 +329,10 @@ public class CalculatorTest {
 		double result = 0;
 
 		for (int i = 0; i < 200; i++) {
-			firstNumber = Double.valueOf(
-					df.format(random.nextDouble() * (-100)));
-			secondNumber = Double.valueOf(
-					df.format(random.nextDouble() * (-100)));
+			firstNumber = Double.valueOf(df
+					.format(random.nextDouble() * (-100)));
+			secondNumber = Double.valueOf(df
+					.format(random.nextDouble() * (-100)));
 			result = firstNumber - secondNumber;
 
 			LOG.info("Testing the method subtract with: "
@@ -352,10 +352,10 @@ public class CalculatorTest {
 		double result = 0;
 
 		for (int i = 0; i < 200; i++) {
-			firstNumber = Double.valueOf(
-					df.format(random.nextDouble() * (-1000)));
-			secondNumber = Double.valueOf(
-					df.format(random.nextDouble() * (-1000)));
+			firstNumber = Double.valueOf(df
+					.format(random.nextDouble() * (-1000)));
+			secondNumber = Double.valueOf(df
+					.format(random.nextDouble() * (-1000)));
 			result = firstNumber - secondNumber;
 
 			LOG.info("Testing the method subtract with: "
@@ -376,8 +376,8 @@ public class CalculatorTest {
 		double secondNumber = 0;
 		double result = firstNumber - secondNumber;
 
-		LOG.info("Testing the method subtract with: " + firstNumber
-				+ " and " + secondNumber);
+		LOG.info("Testing the method subtract with: "
+				+ firstNumber + " and " + secondNumber);
 		assertEquals(
 				Math.round(calculator.subtract(firstNumber,
 						secondNumber)),
@@ -394,8 +394,8 @@ public class CalculatorTest {
 			LOG.info("Testing the method subtract with: "
 					+ firstNumber + " and " + secondNumber);
 			assertEquals(
-					Math.round(calculator.subtract(firstNumber,
-							secondNumber)),
+					Math.round(calculator.subtract(
+							firstNumber, secondNumber)),
 					Math.round(result), 1);
 
 			// Testing the case of something random - zero
@@ -407,11 +407,11 @@ public class CalculatorTest {
 			LOG.info("Testing the method subtract with: "
 					+ firstNumber + " and " + secondNumber);
 			assertEquals(
-					Math.round(calculator.subtract(firstNumber,
-							secondNumber)),
+					Math.round(calculator.subtract(
+							firstNumber, secondNumber)),
 					Math.round(result), 1);
 
 		}
 	}
-	
+
 }

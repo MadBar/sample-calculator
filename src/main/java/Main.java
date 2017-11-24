@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Main {
 	public static void main(String[] args) {
-		// Calculator cal = new Calculator();
+		 Calculator cal = new Calculator();
 		// Random ran = new Random();
 		//
 		// double firstSmallPosNumber = ran.nextDouble();
@@ -20,6 +20,13 @@ public class Main {
 		// avrundar.
 //		System.out.println(3.5 * Math.PI);
 //		System.out.println(3.5 * 3.14);
+		 
+		System.out.println(cal.divide(0, 0));
+		System.out.println(cal.divide(0, 5));
+		System.out.println(cal.divide(7, 0));
+		System.out.println(cal.divide(4, 3));
+		 
+		 
 	}
 
 }
