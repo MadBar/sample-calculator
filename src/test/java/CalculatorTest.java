@@ -167,49 +167,39 @@ public class CalculatorTest {
 						secondNumber)),
 				Math.round(result), 1);
 		
-		//Testing the case of zero + something random
-		firstNumber = 0;
-		secondNumber = Double.valueOf(
-				df.format(random.nextDouble() * 10));
-		result = firstNumber + secondNumber;
+		for (int i = 0; i < 200; i++) {
+			
+			
+			//Testing the case of zero + something random
+			firstNumber = 0;
+			secondNumber = Double.valueOf(
+					df.format(random.nextDouble() * 10));
+			result = firstNumber + secondNumber;
+			
+			LOG.info("Testing the method add with: "
+					+ firstNumber + " and " + secondNumber);
+			assertEquals(
+					Math.round(calculator.add(firstNumber,
+							secondNumber)),
+					Math.round(result), 1);
+			
+			//Testing the case of something random + zero
+					firstNumber = Double.valueOf(
+							df.format(random.nextDouble() * 10));
+					secondNumber = 0;
+					result = firstNumber + secondNumber;
+					
+					
+					LOG.info("Testing the method add with: "
+							+ firstNumber + " and " + secondNumber);
+					assertEquals(
+							Math.round(calculator.add(firstNumber,
+									secondNumber)),
+							Math.round(result), 1);
+			
 		
-		LOG.info("Testing the method add with: "
-				+ firstNumber + " and " + secondNumber);
-		assertEquals(
-				Math.round(calculator.add(firstNumber,
-						secondNumber)),
-				Math.round(result), 1);
-		
-		//Testing the case of something random + zero
-				firstNumber = Double.valueOf(
-						df.format(random.nextDouble() * 10));
-				secondNumber = 0;
-				result = firstNumber + secondNumber;
-				
-				
-				LOG.info("Testing the method add with: "
-						+ firstNumber + " and " + secondNumber);
-				assertEquals(
-						Math.round(calculator.add(firstNumber,
-								secondNumber)),
-						Math.round(result), 1);
-		
-		
-//		for (int i = 0; i < 200; i++) {
-//			firstNumber = Double.valueOf(
-//					df.format(random.nextDouble() * (-10)));
-//			secondNumber = Double.valueOf(
-//					df.format(random.nextDouble() * (-10)));
-//			result = firstNumber + secondNumber;
-//
-//			LOG.info("Testing the method add with: "
-//					+ firstNumber + " and " + secondNumber);
-//			assertEquals(
-//					Math.round(calculator.add(firstNumber,
-//							secondNumber)),
-//					Math.round(result), 1);
 
-//		}
+		}
 	}
 
 }
