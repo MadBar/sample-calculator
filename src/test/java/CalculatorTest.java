@@ -35,7 +35,7 @@ public class CalculatorTest {
 
 		}
 	}
-	
+
 	@Test
 	public void testAddMediumSizedPositiveNumbers() {
 		double firstNumber = 0;
@@ -44,9 +44,9 @@ public class CalculatorTest {
 
 		for (int i = 0; i < 200; i++) {
 			firstNumber = Double.valueOf(
-					df.format(random.nextDouble() * 10));
+					df.format(random.nextDouble() * 100));
 			secondNumber = Double.valueOf(
-					df.format(random.nextDouble() * 10));
+					df.format(random.nextDouble() * 100));
 			result = firstNumber + secondNumber;
 
 			LOG.info("Testing the method with: "
@@ -57,6 +57,159 @@ public class CalculatorTest {
 					Math.round(result), 1);
 
 		}
+	}
+
+	@Test
+	public void testAddLargeSizedPositiveNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			firstNumber = Double.valueOf(
+					df.format(random.nextDouble() * 1000));
+			secondNumber = Double.valueOf(
+					df.format(random.nextDouble() * 1000));
+			result = firstNumber + secondNumber;
+
+			LOG.info("Testing the method with: "
+					+ firstNumber + " and " + secondNumber);
+			assertEquals(
+					Math.round(calculator.add(firstNumber,
+							secondNumber)),
+					Math.round(result), 1);
+
+		}
+	}
+	
+//	--------
+	
+	@Test
+	public void testAddSmallSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			firstNumber = Double.valueOf(
+					df.format(random.nextDouble() * (-10)));
+			secondNumber = Double.valueOf(
+					df.format(random.nextDouble() * (-10)));
+			result = firstNumber + secondNumber;
+
+			LOG.info("Testing the method add with: "
+					+ firstNumber + " and " + secondNumber);
+			assertEquals(
+					Math.round(calculator.add(firstNumber,
+							secondNumber)),
+					Math.round(result), 1);
+
+		}
+	}
+
+	@Test
+	public void testAddMediumSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			firstNumber = Double.valueOf(
+					df.format(random.nextDouble() * (-100)));
+			secondNumber = Double.valueOf(
+					df.format(random.nextDouble() * (-100)));
+			result = firstNumber + secondNumber;
+
+			LOG.info("Testing the method with: "
+					+ firstNumber + " and " + secondNumber);
+			assertEquals(
+					Math.round(calculator.add(firstNumber,
+							secondNumber)),
+					Math.round(result), 1);
+
+		}
+	}
+
+	@Test
+	public void testAddLargeSizedNegativeNumbers() {
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = 0;
+
+		for (int i = 0; i < 200; i++) {
+			firstNumber = Double.valueOf(
+					df.format(random.nextDouble() * (-1000)));
+			secondNumber = Double.valueOf(
+					df.format(random.nextDouble() * (-1000)));
+			result = firstNumber + secondNumber;
+
+			LOG.info("Testing the method with: "
+					+ firstNumber + " and " + secondNumber);
+			assertEquals(
+					Math.round(calculator.add(firstNumber,
+							secondNumber)),
+					Math.round(result), 1);
+
+		}
+	}
+	@Test
+	public void testAddZeros() {
+		
+		//testing the case 0+0
+		double firstNumber = 0;
+		double secondNumber = 0;
+		double result = firstNumber + secondNumber;
+
+		LOG.info("Testing the method with: "
+				+ firstNumber + " and " + secondNumber);
+		assertEquals(
+				Math.round(calculator.add(firstNumber,
+						secondNumber)),
+				Math.round(result), 1);
+		
+		//Testing the case of zero + something random
+		firstNumber = 0;
+		secondNumber = Double.valueOf(
+				df.format(random.nextDouble() * 10));
+		result = firstNumber + secondNumber;
+		
+		LOG.info("Testing the method add with: "
+				+ firstNumber + " and " + secondNumber);
+		assertEquals(
+				Math.round(calculator.add(firstNumber,
+						secondNumber)),
+				Math.round(result), 1);
+		
+		//Testing the case of something random + zero
+				firstNumber = Double.valueOf(
+						df.format(random.nextDouble() * 10));
+				secondNumber = 0;
+				result = firstNumber + secondNumber;
+				
+				
+				LOG.info("Testing the method add with: "
+						+ firstNumber + " and " + secondNumber);
+				assertEquals(
+						Math.round(calculator.add(firstNumber,
+								secondNumber)),
+						Math.round(result), 1);
+		
+		
+//		for (int i = 0; i < 200; i++) {
+//			firstNumber = Double.valueOf(
+//					df.format(random.nextDouble() * (-10)));
+//			secondNumber = Double.valueOf(
+//					df.format(random.nextDouble() * (-10)));
+//			result = firstNumber + secondNumber;
+//
+//			LOG.info("Testing the method add with: "
+//					+ firstNumber + " and " + secondNumber);
+//			assertEquals(
+//					Math.round(calculator.add(firstNumber,
+//							secondNumber)),
+//					Math.round(result), 1);
+
+//		}
 	}
 
 }
